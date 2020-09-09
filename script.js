@@ -33,10 +33,10 @@ function showSlide() {
     if (nextImage == null) {
         document.querySelector(".image-to-show").classList.add('active');
         nextImage = document.querySelector(".active");
-        // image.hidden = true;
-        image.fadeIn(500);
-        // nextImage.removeAttribute('hidden');
-        nextImage.fadeOut(500);
+        image.hidden = true;
+        // image.style.transition = "visibility 0s linear 0.5s,opacity 0.5s linear";
+        nextImage.removeAttribute('hidden');
+        // nextImage.style.transition = "visibility 0s linear 0.5s,opacity 0.5s linear";
         image.classList.remove('active');
         nextImage.classList.add('active');
         timerId = setInterval(() => {
@@ -46,10 +46,12 @@ function showSlide() {
         setTimeout(() => clearInterval(timerId), 11000);
     } else {
 
-        // image.hidden = true;
-        image.fadeIn(500);
-        // nextImage.removeAttribute('hidden');
-        nextImage.fadeOut(500);
+        image.hidden = true;
+        // image.style.visibility = 'hidden';
+        // image.style.animationDuration = "0.5s";
+        nextImage.removeAttribute('hidden');
+        // nextImage.style.visibility = 'visible';
+        // nextImage.style.transition = "visibility 0s linear 0.5s,opacity 0.5s linear";
         image.classList.remove('active');
         nextImage.classList.add('active');
         timerId = setInterval(() => {
